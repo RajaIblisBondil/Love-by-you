@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I Love you miwski</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Comic Sans MS', sans-serif;
+      text-align: center;
+      background: #ff2e63; /* Background merah tema Valentine */
+          }
+
+    /* Elemen love */
+    .love {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: red;
+      transform: rotate(45deg);
+      animation: float 5s infinite ease-in-out;
+    }
+
+    /* Membuat love berbentuk hati */
+    .love::before,
+    .love::after {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .love::before {
+      top: -7.5px;
+      left: 0;
+    }
+
+    .love::after {
+      top: 0;
+      left: -7.5px;
+    }
+
+    /* Animasi love melayang */
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100px) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    /* Kontainer utama */
+    .container {
+      position: relative;
+      z-index: 1;
+      color: white;
+      padding: 20px;
+    }
+
+    .container h1 {
+      color: white;
+    }
+
+    /* Style gambar */
+    img {
+      width: 150px;
+      height: auto;
+      margin: 20px 0;
+      border-radius: 10px;
+    }
+
+    /* Tombol donasi */
+    button {
+      background-color: white;
+      color: #ff2e63;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #ffe0e6;
+    }
+  </style>
+</head>
+<body>
+  <!-- Elemen HTML -->
+  <div class="container">
+    <h1>aku cinta kamu kamilia</h1>
+    <img style="width: 20%;" src="7ecd66a7-a911-44a2-a8dd-54ac08ea97a2.jpg">
+    <img style="width: 20%;" src="bf268f14-af7e-42ea-856d-3e8f461b555e.jpg">
+    <img style="width: 20%;" src="7353bdc9-9848-4f61-9186-693ce31e8680.jpg">
+    <hr>
+
+    <p>kamiwaa, Happy Valentine's Day, on this special day, I just want to take a moment to remind you how much you mean to me. you are the one i love, not just for the way you make me feel but for who you are. For me, Valentine’s Day isn’t about a special day, but about a special person who loves me just the way I am, thank you for being my valentine, youe are greatest gift god gave me, i hope the gifts that god gave me last forever.  what a privilege it is, to live in a world with you in it <br><br> Your sweet smile is left in the corners of my mind Even though you're just silent, I feel like you're flirting with me. such a blessing to have you in my life, Thank you for always making me feel loved by you. . </p>
+
+
+    <button onclick="window.open('https://youtu.be/RIJJ5Lo8Mes')">I LOVE YOU (click this button)</button>
+  </div>
+
+  <!-- Script untuk membuat love -->
+  <script>
+    const numLoves = 50; // Jumlah love
+    for (let i = 0; i < numLoves; i++) {
+      const love = document.createElement('div');
+      love.classList.add('love');
+      love.style.top = Math.random() * window.innerHeight + 'px'; // Posisi acak (vertikal)
+      love.style.left = Math.random() * window.innerWidth + 'px'; // Posisi acak (horizontal)
+      love.style.animationDuration = Math.random() * 3 + 2 + 's'; // Durasi animasi acak
+      love.style.animationDelay = Math.random() * 2 + 's'; // Waktu mulai animasi acak
+      document.body.appendChild(love); // Tambahkan elemen love ke body
+    }
+  </script>
+</body>
+</html>
